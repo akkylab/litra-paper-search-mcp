@@ -1,0 +1,46 @@
+{
+  "name": "litra-paper-search-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for Litra.ai – AI-powered academic paper search with relevance scoring and summarization",
+  "type": "module",
+  "bin": {
+    "litra-paper-search-mcp": "./dist/index.js"
+  },
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc && chmod 755 dist/index.js",
+    "dev": "tsc --watch",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "paper-search",
+    "academic",
+    "research",
+    "litra",
+    "ai"
+  ],
+  "author": "akkylab",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/akkylab/litra-paper-search-mcp.git"
+  },
+  "homepage": "https://litra-ai.com/developers",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.27.1",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7.0"
+  }
+}
