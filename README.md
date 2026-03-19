@@ -172,9 +172,15 @@ See [litra-ai.com/pricing](https://litra-ai.com/pricing) for plan details and pr
 
 ## Response Language
 
-All API responses are in **English only**. This is by design — LLMs process English with higher accuracy, and since this MCP server is primarily used by AI agents, English-only responses ensure the best quality for downstream processing. There are no plans to add other languages for the MCP/API interface.
+All API responses — including paper titles, summaries, and research overviews — are returned in **English only**.
 
-If you need results in another language, the AI client receiving the English response can translate it as needed.
+This is an intentional design choice for the MCP server and public API:
+
+- **LLM accuracy**: Large language models perform reasoning, analysis, and tool use more reliably in English. Returning structured data in English ensures the highest quality when AI agents process search results for downstream tasks (e.g., literature reviews, citation analysis, research synthesis).
+- **Token efficiency**: English responses consume fewer tokens than translated equivalents, reducing both latency and cost for LLM-based workflows.
+- **No multilingual plans for the API**: This MCP server is designed specifically for AI agent consumption. There are no plans to add other response languages. If you need Japanese or other languages, use the [Litra.ai web interface](https://litra-ai.com) directly, which provides full Japanese support including translated titles and summaries.
+
+If your AI workflow requires output in a specific language, the AI client can translate the English response as a post-processing step — this is more reliable than asking the API to translate, since the LLM can adapt the translation to your specific context.
 
 ## Troubleshooting
 
