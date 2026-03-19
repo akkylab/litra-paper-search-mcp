@@ -15,7 +15,6 @@ export interface SearchPapersParams {
   max_results?: number;
   year_from?: number;
   year_to?: number;
-  lang?: "en" | "ja";
 }
 
 export interface PaperSummary {

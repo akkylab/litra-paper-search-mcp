@@ -7,7 +7,7 @@ MCP server for [Litra.ai](https://litra-ai.com) – AI-powered academic paper se
 
 ## Features
 
-- **search_papers** – Search academic papers with AI-powered relevance scoring (1-10) and summarization. Supports year filtering and bilingual output (English/Japanese).
+- **search_papers** – Search academic papers with AI-powered relevance scoring (1-10) and summarization. Supports year filtering.
 - **search_author** – Search papers by author name. Returns author profile (affiliation, h-index) and publications.
 - **check_credits** – Check your Litra.ai credit balance and subscription plan.
 
@@ -135,7 +135,6 @@ Search academic papers with AI-powered relevance scoring and summarization.
 | `max_results` | number | No | Maximum number of papers (10-30, default: 30) |
 | `year_from` | number | No | Minimum publication year (inclusive) |
 | `year_to` | number | No | Maximum publication year (inclusive) |
-| `lang` | string | No | Response language: `"en"` (default) or `"ja"` |
 
 **Example usage:**
 
@@ -170,6 +169,12 @@ API access requires a paid Litra.ai subscription (Mini or above). Each search co
 | Max | 120 requests/min |
 
 See [litra-ai.com/pricing](https://litra-ai.com/pricing) for plan details and pricing.
+
+## Response Language
+
+All API responses are in **English only**. This is by design — LLMs process English with higher accuracy, and since this MCP server is primarily used by AI agents, English-only responses ensure the best quality for downstream processing. There are no plans to add other languages for the MCP/API interface.
+
+If you need results in another language, the AI client receiving the English response can translate it as needed.
 
 ## Troubleshooting
 

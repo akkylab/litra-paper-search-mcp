@@ -203,22 +203,15 @@ export function registerTools(server: McpServer): void {
           .int()
           .optional()
           .describe("Maximum publication year (inclusive)"),
-        lang: z
-          .enum(["en", "ja"])
-          .default("en")
-          .describe(
-            "Response language for summaries and translated titles"
-          ),
       },
     },
-    async ({ query, max_results, year_from, year_to, lang }) => {
+    async ({ query, max_results, year_from, year_to }) => {
       try {
         const result = await getClient().searchPapers({
           query,
           max_results,
           year_from,
           year_to,
-          lang,
         });
         return {
           content: [{ type: "text" as const, text: formatSearchResult(result) }],
