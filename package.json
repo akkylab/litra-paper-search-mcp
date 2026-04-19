@@ -1,6 +1,6 @@
 {
   "name": "litra-paper-search-mcp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "MCP server for Litra.ai – AI-powered academic paper search with relevance scoring and summarization",
   "type": "module",
   "bin": {
