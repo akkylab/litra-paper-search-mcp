@@ -7,7 +7,7 @@ MCP server for [Litra.ai](https://litra-ai.com) – AI-powered academic paper se
 
 ## Features
 
-- **search_papers** – Search academic papers with AI-powered relevance scoring (1-10) and summarization. Supports year filtering.
+- **search_papers** – Search academic papers with AI-powered relevance scoring (1-10) and summarization. Year filtering is available but currently experimental (see [Known limitations](#known-limitations)).
 - **search_author** – Search papers by author name. Returns author profile (affiliation, h-index) and publications.
 - **check_credits** – Check your Litra.ai credit balance and subscription plan.
 
@@ -133,12 +133,14 @@ Search academic papers with AI-powered relevance scoring and summarization.
 |-----------|------|----------|-------------|
 | `query` | string | Yes | Natural language search query (1-500 chars) |
 | `max_results` | number | No | Maximum number of papers (10-30, default: 30) |
-| `year_from` | number | No | Minimum publication year (inclusive) |
-| `year_to` | number | No | Maximum publication year (inclusive) |
+| `year_from` | number | No | Minimum publication year (inclusive). **Experimental – see [Known limitations](#known-limitations).** |
+| `year_to` | number | No | Maximum publication year (inclusive). **Experimental – see [Known limitations](#known-limitations).** |
 
 **Example usage:**
 
 > Search for recent papers on transformer architectures in NLP from 2023 onwards
+
+> **Known limitations (year filtering)**: The `year_from` / `year_to` filters are still experimental. The pilot search stage currently does not apply the year filter, so some papers outside the specified range may still appear in results. Full support is tracked in Litra.ai issue [#1068](https://github.com/akkylab/ai-paper-research-service/issues/1068). As a workaround, you may need to post-filter the returned papers by their `year` field.
 
 ### search_author
 

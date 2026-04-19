@@ -197,12 +197,22 @@ export function registerTools(server: McpServer): void {
           .number()
           .int()
           .optional()
-          .describe("Minimum publication year (inclusive)"),
+          .describe(
+            "Minimum publication year (inclusive). " +
+              "NOTE: Year filtering is currently experimental. The pilot search " +
+              "stage does not yet apply the year filter, so some papers outside " +
+              "the specified range may still appear in results. " +
+              "Full support is tracked in Litra.ai issue #1068."
+          ),
         year_to: z
           .number()
           .int()
           .optional()
-          .describe("Maximum publication year (inclusive)"),
+          .describe(
+            "Maximum publication year (inclusive). " +
+              "NOTE: Year filtering is currently experimental. See year_from " +
+              "for details on the known limitation (Litra.ai issue #1068)."
+          ),
       },
     },
     async ({ query, max_results, year_from, year_to }) => {
