@@ -1,5 +1,21 @@
 # litra-paper-search-mcp
 
+> **⚠️ This project is no longer maintained.**
+>
+> Litra AI discontinued its public API and MCP server on 2026-09-04. The API
+> endpoints this server calls no longer exist, so it cannot work even with a
+> valid API key.
+>
+> **Why:** what makes Litra AI useful is the way it shows papers — citation
+> trees, lineage of references, year distributions, research maps. MCP can only
+> carry text, so none of that reaches you. A plain list of papers is something
+> other services already provide. We chose to focus on the web app, where the
+> value actually lands.
+>
+> Please use the web app at <https://litra-ai.com> instead.
+>
+> This repository stays online, read-only, for reference.
+
 [![npm version](https://img.shields.io/npm/v/litra-paper-search-mcp.svg)](https://www.npmjs.com/package/litra-paper-search-mcp)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
